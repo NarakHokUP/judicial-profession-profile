@@ -1,18 +1,32 @@
 package com.moj.model;
 
+import java.util.List;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "position")
 public class Position {
-	
-	@Id @GeneratedValue
+
+	@Id
+	@GeneratedValue
+	@Column(name = "id")
 	private Integer id;
-	
+
+	@Column(name = "title")
 	private String title;
+
+	@Column(name = "description")
 	private String description;
-	
+
+	@OneToMany(mappedBy = "position")
+	private List<Officer> officers;
+
 	public Integer getId() {
 		return id;
 	}
@@ -37,8 +51,12 @@ public class Position {
 		this.description = description;
 	}
 
-	@Override
-	public String toString() {
-		return "Position [id=" + id + ", title=" + title + ", description=" + description + "]";
+	public List<Officer> getOfficers() {
+		return officers;
 	}
+
+	public void setOfficers(List<Officer> officers) {
+		this.officers = officers;
+	}
+
 }
