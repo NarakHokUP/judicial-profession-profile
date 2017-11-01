@@ -6,7 +6,7 @@
 	<groupId>com.moj</groupId>
 	<artifactId>judicial-profession-profile</artifactId>
 	<version>0.0.1</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>judicial-profession-profile</name>
 	<description>Build my own modules</description>
