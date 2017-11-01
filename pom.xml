@@ -6,7 +6,7 @@
 	<groupId>com.moj</groupId>
 	<artifactId>judicial-profession-profile</artifactId>
 	<version>0.0.1</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>judicial-profession-profile</name>
 	<description>Build my own modules</description>
@@ -67,11 +67,10 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.phearun</groupId>
-			<artifactId>pr-file-upload</artifactId>
-			<version>1.0.0</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
 		</dependency>
-
 	</dependencies>
 
 	<build>
