@@ -1,5 +1,6 @@
 package com.moj.model;
 
+import java.util.Arrays;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -180,5 +181,14 @@ public class Officer {
 
 	public void setPosition(Position position) {
 		this.position = position;
+	}
+
+	@Override
+	public String toString() {
+		return "Officer [id=" + id + ", khName=" + khName + ", enName=" + enName + ", dateOfBirth=" + dateOfBirth
+				+ ", placeOfBirth=" + placeOfBirth + ", phoneNumber=" + Arrays.toString(phoneNumber) + ", fax="
+				+ Arrays.toString(fax) + ", email=" + Arrays.toString(email) + ", website=" + Arrays.toString(website)
+				+ ", degree=" + degree + ", office=" + office + ", other=" + other + ", image=" + image
+				+ ", currentStatus=" + currentStatus + "]";
 	}
 }

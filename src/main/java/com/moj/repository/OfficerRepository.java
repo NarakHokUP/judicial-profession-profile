@@ -3,6 +3,7 @@ package com.moj.repository;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RestResource;
 import org.springframework.stereotype.Repository;
@@ -16,4 +17,8 @@ public interface OfficerRepository extends JpaRepository<Officer, Integer>{
 	public List<Officer> findByEnNameContainsIgnoreCase(@Param("enName") String enName);
 	@RestResource(path="kh-name", rel="kh-name")
 	public List<Officer> findByKhNameContainsIgnoreCase(@Param("khName") String khName);
+	
+	@RestResource(path="name", rel="name")
+	@Query("select o from Officer o where lower(o.enName) LIKE lower(concat('%', :name, '%')) or o.khName LIKE concat('%', :name, '%')")
+	public List<Officer> findByName(@Param("name") String name);
 }

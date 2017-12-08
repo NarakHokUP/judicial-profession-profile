@@ -24,9 +24,13 @@ public class Position {
 	@Column(name = "description")
 	private String description;
 
+	@Column(name = "icon")
+	private String icon;
+	
 	@OneToMany(mappedBy = "position")
 	private List<Officer> officers;
-
+	
+	
 	public Integer getId() {
 		return id;
 	}
@@ -59,4 +63,16 @@ public class Position {
 		this.officers = officers;
 	}
 
+	public String getIcon() {
+		return icon;
+	}
+
+	public void setIcon(String icon) {
+		this.icon = icon;
+	}
+
+	@Override
+	public String toString() {
+		return "Position [id=" + id + ", title=" + title + ", description=" + description + ", icon=" + icon + "]";
+	}
 }
