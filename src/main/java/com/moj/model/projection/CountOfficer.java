@@ -10,6 +10,8 @@ public interface CountOfficer {
 
 	public Integer getId();
 	
+	public String getIcon();
+	
 	@Value("#{target.title}")
 	public String getTitle();
 	

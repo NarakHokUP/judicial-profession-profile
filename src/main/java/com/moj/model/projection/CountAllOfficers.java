@@ -10,6 +10,8 @@ public interface CountAllOfficers {
 	
 	public Integer getId();
 	
+	public String getIcon();
+	
 	@Value("#{target.title}") //virtual projection -> optional
 	public String getTitle();
 	
