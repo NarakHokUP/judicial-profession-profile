@@ -24,7 +24,6 @@ public interface OfficerRepository extends JpaRepository<Officer, Integer>{
 	@Query("select o from Officer o where lower(o.enName) LIKE lower(concat('%', :name, '%')) or o.khName LIKE concat('%', :name, '%')")
 	public List<Officer> findByName(@Param("name") String name);
 	
-	
 	@RestResource(exported = false)
 	@Query("select count(o) from Officer o")
 	public Integer getTotalOfficers();
@@ -32,6 +31,5 @@ public interface OfficerRepository extends JpaRepository<Officer, Integer>{
 	@RestResource(exported = false)
 	@Query("select count(o) from Officer o where o.position = ?1")
 	public Integer getTotalOfficersByPosition(Position position);
-	
 	
 }
